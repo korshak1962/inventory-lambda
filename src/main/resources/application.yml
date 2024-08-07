@@ -1,0 +1,33 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+
+amazon:
+  dynamodb:
+    endpoint: http://localhost:8000
+  aws:
+    accesskey: AKIAUIUULKZWTPFIOQZ7
+    secretkey: U76oSPOBw9DGAtX3VTQJEi9RVGuXzgTqlD0GUAt
+    region: us-west-1
+
+# Actuator configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+# Logging configuration
+logging:
+  level:
+    root: INFO
+    com.korshak: DEBUG
+    org.springframework: DEBUG
+    org.springframework.kafka: INFO
